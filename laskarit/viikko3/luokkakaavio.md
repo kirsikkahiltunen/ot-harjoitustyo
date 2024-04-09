@@ -20,6 +20,6 @@
     Toiminto4 "1" -- "1" Hotelli
     Pelinappula "1" -- "1" Pelaaja
     Normaalitkadut "0..22" -- "0..1" Pelaaja
-    Pelaaja "0..1" -- "20000" Rahat
+    Pelaaja "0..1" -- "0..20000" Rahat
     Pelaaja "2..8" -- "1" Monopolipeli
 ```
