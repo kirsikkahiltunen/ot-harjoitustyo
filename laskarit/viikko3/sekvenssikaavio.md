@@ -11,7 +11,7 @@ sequenceDiagram
     participant lippu_luukku
     main->>lippu_luukku: osta_matkakortti("Kalle")
     participant kallen_kortti
-    lippu_luukku-->>kallen_kortti: Matkakortti(Kalle)
+    lippu_luukku->>kallen_kortti: Matkakortti(Kalle)
     main->>rautatietori: lataa_arvoa(kallen_kortti, 3)
     rautatietori->>kallen_kortti: kasvata_arvoa(3)
     main->>ratikka6: osta_lippu(kallen_kortti, 0)
