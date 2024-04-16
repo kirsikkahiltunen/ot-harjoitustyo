@@ -1,6 +1,6 @@
 ```mermaid
  classDiagram
-    User "1" <-- "*" card
+    User "1" <-- "*" Card
 
     class User{
         username
