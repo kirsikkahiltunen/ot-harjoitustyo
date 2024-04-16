@@ -9,3 +9,4 @@
 - [vaatimusmäärittely](https://github.com/kirsikkahiltunen/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
 - [työaikakirjanpito](https://github.com/kirsikkahiltunen/ot-harjoitustyo/blob/master/dokumentaatio/tyoaikakirjanpito.md)
 - [changelog](https://github.com/kirsikkahiltunen/ot-harjoitustyo/blob/master/dokumentaatio/changelog.md)
+- [arkkitehtuuri](https://github.com/kirsikkahiltunen/ot-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
