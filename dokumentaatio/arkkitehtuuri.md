@@ -24,3 +24,21 @@
 ```
  
 
+## Terminaluin ja luokan Card toiminta sekvenssikaaviona
+
+```mermaid
+sequenceDiagram
+  actor User
+  participant TerminalUI
+  participant Card
+  User->>TerminalUI: select(1)
+  TerminalUI->>Card: generate_variables(1)
+  Card-->>TerminalUI: self.card.force, self.card.area
+  TerminalUI-->>User: print_question()
+  User->>TerminalUI: get_answer_from_user()
+  TerminalUI->>Card: self.card.solve()
+  Card -->> TerminalUI: self.card.pressure()
+  TerminalUI -->> User: correct_answer()
+  User ->> TerminalUI: select(0)
+  TerminalUI -->> User: end_session()
+```

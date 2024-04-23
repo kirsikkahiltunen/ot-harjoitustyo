@@ -11,4 +11,7 @@
 |  14.4.| 3    | Sovelluksen rakenteen ja alihakemistojen luontia ja järjestelyä               |
 |  15.4.| 6    | Card luokan muokkaaminen, testitapausten lisääminen ja muokkaaminen           |
 |  16.4.| 9    | terminalui.py suunnittelu ja toteutus, kirjautumis sivun muokkaus ja rekisteröitymissivun luominen Tkinterin avulla|
-|  yht. | 34   | |
+|  20.4.| 2    | Sovelluksen tietojentallennuksen opiskelua ja harjoittelua                   |
+|  21.4.| 2    | Tietokannan suunnittelua ja referenssisovelluksen tietokannan hallintaan tutustumista|
+|  23.4.| 8    | Sovelluksen lähdekoodin muokkaamista, sekvenssikaavion teko, uusien testien luominen ja sovelluksen rakenteen mukkaaminen SQL tietokantaa varten|
+|  yht. | 46  | |

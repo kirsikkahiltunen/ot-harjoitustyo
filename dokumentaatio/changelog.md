@@ -20,3 +20,10 @@
 - Koodin laatua on parannettu pylint:in kehotusten perusteella
 - Alustava luokkakaavio ohjelman rakenteesta tehty arkkitehtuuri.md tiedostoon, joka löytyy dokumentaatio hakemistosta
 
+### Viikko 5
+
+- Luokkaa Card muokattu, lisätty get_hint funktio.
+- TerminalUI:ssä uusi toiminnallisuus; laskuri, joka pitää kirjaa tehtyjen tehtävien yhteismäärästä sekä ensimmäisellä yrityksellä onnistuneiden tehtävien määrästä.
+- Sovelluksen rakennetta muokattu tulevaa SQL tietokantaa varten, vielä tietokanta ei toimi.
+- Tehty sekvenssikaavio, joka kuvaa Card-luokan toimintaa, kun käytetään TerminalUI:tä
+- Lisätty testejä Card luokalle
