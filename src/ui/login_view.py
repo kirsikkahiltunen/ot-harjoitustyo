@@ -9,8 +9,6 @@ class LoginView:
         self._frame = None
         self._show_exercise_list_view = _show_exercise_list_view
         self._show_create_user_view = _show_create_user
-        self._error_variable = None
-        self._error_label = None
 
         self.login_frame()
 

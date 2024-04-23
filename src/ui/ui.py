@@ -25,7 +25,6 @@ class UI:
             self._show_create_user,
             self._show_exercise_list_view
         )
-
         self._current_view.pack()
 
     def _show_create_user(self):
@@ -35,7 +34,6 @@ class UI:
             self._root,
             self._show_login
         )
-
         self._current_view.pack()
 
     def _show_exercise_list_view(self):
@@ -43,8 +41,5 @@ class UI:
 
         self._current_view = ExerciseList(
             self._root,
-            # self._show_index_view,
-            # self._show_login
         )
-
         self._current_view.pack()

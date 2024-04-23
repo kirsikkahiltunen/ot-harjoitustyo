@@ -6,8 +6,6 @@ class ExerciseList:
     def __init__(self, root):
         self._root = root
         self._frame = None
-        self._error_variable = None
-        self._error_label = None
 
         self.exercise_list_frame()
 
