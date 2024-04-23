@@ -24,7 +24,7 @@
 ```
  
 
-## Terminaluin ja luokan Card toiminta sekvenssikaaviona
+## TerminalUI:n ja luokan Card toiminta sekvenssikaaviona
 
 ```mermaid
 sequenceDiagram
