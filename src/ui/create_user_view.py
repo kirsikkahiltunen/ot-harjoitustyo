@@ -1,3 +1,4 @@
+import os
 from tkinter import Tk, ttk, constants
 
 
@@ -19,7 +20,7 @@ class CreateUserView:
     def destroy(self):
         self._frame.destroy()
 
-    def create_user_frame(self):
+    def create_user_frame(self, message=None):
         self._frame = ttk.Frame(master=self._root)
 
         heading_label = ttk.Label(
@@ -51,13 +52,17 @@ class CreateUserView:
         self._password_entry.grid(row=2, column=1, sticky=(
             constants.E, constants.W), padx=5, pady=5)
 
-        button.grid(row=4, column=0, columnspan=2, sticky=(
+        button.grid(row=5, column=0, columnspan=2, sticky=(
             constants.E, constants.W), padx=5, pady=5)
 
         password_again_label.grid(row=3, column=0, padx=10, pady=10)
 
         self._password_again_entry.grid(row=3, column=1, sticky=(
             constants.E, constants.W), padx=5, pady=5)
+
+        if message:
+            self._error_message.set(message)
+            self._error_label.grid(row=4, column=0, padx=10, pady=10)
 
         self._root.grid_columnconfigure(1, weight=1, minsize=300)
 
@@ -69,7 +74,17 @@ class CreateUserView:
         if len(username) > 0:
             if len(password) > 0:
                 if len(password_again) > 0:
-                    self._show_login()
+                    if password == password_again:
+                        try:
+                            user_repository.create_user(username, password)
+                            self._show_login()
+                        except:
+                            self.create_user_frame(
+                                f"Käyttäjätunnus {username} on varattu, käytä toista käyttäjätunnusta")
 
         else:
-            self._show_error("Kaikki kentät on täytettävä")
+            self.create_user_frame("Kaikki kentät on täytettävä")
+
+    def _show_error(self, message):
+        self._error_message.set(message)
+        self._error_label.grid()

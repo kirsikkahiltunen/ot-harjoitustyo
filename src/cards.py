@@ -33,6 +33,13 @@ class Card:
             return f"{self.kineticenergy:.2f}"
         return None
 
+    def give_hint(self):
+        if self.category == 1:
+            return "Paine lasketaan kaavalla p=F/A"
+        if self.category == 2:
+            return "Liike-energia lasketaan kaavalla E=1/2mv^2"
+        return None
+
     def show_solution(self):
         if self.category == 1:
             return f"""Paine lasketaan kaavalla p=F/A
