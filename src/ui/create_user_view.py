@@ -83,14 +83,20 @@ class CreateUserView:
                     if password == password_again:
                         try:
                             print("hep")
-                            self.user_repo.create_user(username, password)
-                            self._show_login()
-                        except:
+                            if self.user_repo.create_user(username, password):
+                                self._show_login()
+                            else:
+                                self.destroy()
+                                self.create_user_frame(
+                                    f"Käyttäjätunnus {username} on varattu, käytä toista käyttäjätunnusta")
+                                self.pack()
+
+                        except Exception as e:
+                            print("Error:", e)
                             self.destroy()
-                            
-                            self.create_user_frame(
-                                f"Käyttäjätunnus {username} on varattu, käytä toista käyttäjätunnusta")
+                            self.create_user_frame("Virheellinen rekisteröityminen")
                             self.pack()
+
 
         else:
             self.create_user_frame("Kaikki kentät on täytettävä")
