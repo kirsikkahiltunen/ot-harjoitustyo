@@ -1,5 +1,6 @@
 import os
 from tkinter import Tk, ttk, constants
+from repositories.user_repository import UserRepository
 
 
 class CreateUserView:
@@ -11,7 +12,10 @@ class CreateUserView:
         self._username_entry = None
         self._password_entry = None
         self._password_again_entry = None
+        self._error_message = None
+        self._error_label = None
 
+        self.user_repo = UserRepository()
         self.create_user_frame()
 
     def pack(self):
@@ -61,8 +65,10 @@ class CreateUserView:
             constants.E, constants.W), padx=5, pady=5)
 
         if message:
-            self._error_message.set(message)
-            self._error_label.grid(row=4, column=0, padx=10, pady=10)
+            print(message)
+            self._error_message = message
+            error_label = ttk.Label(master=self._frame, text=(self._error_message))
+            error_label.grid(row=4, column=1, padx=10, pady=10)
 
         self._root.grid_columnconfigure(1, weight=1, minsize=300)
 
@@ -76,15 +82,15 @@ class CreateUserView:
                 if len(password_again) > 0:
                     if password == password_again:
                         try:
-                            user_repository.create_user(username, password)
+                            print("hep")
+                            self.user_repo.create_user(username, password)
                             self._show_login()
                         except:
+                            self.destroy()
+                            
                             self.create_user_frame(
                                 f"Käyttäjätunnus {username} on varattu, käytä toista käyttäjätunnusta")
+                            self.pack()
 
         else:
             self.create_user_frame("Kaikki kentät on täytettävä")
-
-    def _show_error(self, message):
-        self._error_message.set(message)
-        self._error_label.grid()

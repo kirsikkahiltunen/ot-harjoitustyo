@@ -1,4 +1,9 @@
-def drop_tables(connection):
+from database_connection import get_database_connection
+
+
+connection=get_database_connection()
+
+def drop_tables():
     cursor = connection.cursor()
 
     cursor.execute('''
@@ -8,7 +13,7 @@ def drop_tables(connection):
     connection.commit()
 
 
-def create_tables(connection):
+def create_tables():
     cursor = connection.cursor()
 
     cursor.execute('''
@@ -20,3 +25,6 @@ def create_tables(connection):
     ''')
 
     connection.commit()
+
+drop_tables()
+create_tables()
