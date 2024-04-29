@@ -6,7 +6,7 @@ class UserRepository:
 
     def find_user_by_username(self, username):
         cursor = self._connection.cursor()
-        cursor.execute("SELECT username FROM users WHERE username=?", (username,))
+        cursor.execute("SELECT username, password FROM users WHERE username=?", (username,))
 
         row = cursor.fetchone()
         return row
@@ -28,4 +28,14 @@ class UserRepository:
                         (user, password))
             self._connection.commit()
 
+        return True
+
+
+    def login(self, user, password):
+        user_row=self.find_user_by_username(user)
+
+        if user_row is None or password != user_row[1]:
+            print("Käyttäjätunnus tai salasana väärin")
+            return False
+        
         return True

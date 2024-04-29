@@ -1,5 +1,5 @@
 from tkinter import Tk, ttk, constants
-
+from repositories.user_repository import UserRepository
 
 class LoginView:
     def __init__(self, root, _show_create_user, _show_exercise_list_view):
@@ -9,7 +9,8 @@ class LoginView:
         self._frame = None
         self._show_exercise_list_view = _show_exercise_list_view
         self._show_create_user_view = _show_create_user
-
+        
+        self.user_repo = UserRepository()
         self.login_frame()
 
     def pack(self):
@@ -67,7 +68,7 @@ class LoginView:
         self._username = self._username_entry.get()
         self._password = self._password_entry.get()
 
-        if self._username == "Testi" and self._password == "Testi":
+        if self.user_repo.login(self._username, self._password):
             self.viewnext()
 
     def viewnext(self):
