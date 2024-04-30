@@ -1,5 +1,5 @@
 from cards import Card
-
+from repositories.user_repository import UserRepository
 
 class TerminalUI:
     def __init__(self):
@@ -10,9 +10,45 @@ class TerminalUI:
         self.cardcount = 0
         self.correct_count = 0
 
+        self.user_repo = UserRepository()
+
     def start_app(self):
         print("Hei! Tervetuloa käyttämään fysiikankertaus sovellusta")
+        print("Valitse mitä haluat tehdä")
+        print("1 kirjaudu sisään")
+        print("2 rekisteröidy käyttäjäksi")
+        choice = input("Anna valinta:")
+        if choice == "1":
+            self.login()
+        elif choice == "2":
+            self.register()
+        else:
+            print("Virheellinen valinta")
+            self.start_app()
         self.select()
+
+    def login(self):
+        username = input("Anna käyttäjätunnus: ")
+        password = input("Anna salasana: ")
+        if self.user_repo.login(username, password):
+            self.select()
+        else:
+            self.login()
+
+
+    def register(self):
+        username = input("Anna käyttäjätunnus: ")
+        password = input("Anna salasana: ")
+        if len(username) > 0:
+            if len(password) > 0:
+                try:
+                    if self.user_repo.create_user(username, password):
+                        self.select()
+                    else:
+                        print(f"Käyttäjätunnus {username} on varattu, käytä toista käyttäjätunnusta")
+                        self.register()
+                except Exception as e:
+                    print("Error:", e)
 
     def select(self):
         print("Valitse, minkä aihealueen tehtäviä haluat harjoitella:\npaine=1\nliike-energia=2")
@@ -80,10 +116,12 @@ class TerminalUI:
             self.ask_for_help()
 
     def end_session(self):
-        percent = (self.correct_count/self.cardcount)*100
         print("Kiitos sovelluksen käytöstä!")
-        print(
-            f"Vastasit yhteensä {self.cardcount} tehtävään, joista {self.correct_count} eli {percent:.2f}% sait ensimmäisellä yrityksellä oikein.")
+        if self.correct_count>0 and self.cardcount>0:
+            percent = (self.correct_count/self.cardcount)*100
+            print(
+                f"Vastasit yhteensä {self.cardcount} tehtävään, joista {self.correct_count} eli {percent:.2f}% sait ensimmäisellä yrityksellä oikein.")
+        
 
 
 if __name__ == "__main__":
