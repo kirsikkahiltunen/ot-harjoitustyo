@@ -1,6 +1,7 @@
 from tkinter import Tk, ttk, constants
 from repositories.user_repository import UserRepository
 
+
 class LoginView:
     def __init__(self, root, _show_create_user, _show_exercise_list_view):
         self._root = root
@@ -9,7 +10,7 @@ class LoginView:
         self._frame = None
         self._show_exercise_list_view = _show_exercise_list_view
         self._show_create_user_view = _show_create_user
-        
+
         self.user_repo = UserRepository()
         self.login_frame()
 

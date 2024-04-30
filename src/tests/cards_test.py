@@ -29,11 +29,13 @@ class TestCard(unittest.TestCase):
 
     def test_give_hint_returns_correct_hint_when_category_is_1(self):
         self.card.generate_variables()
-        self.assertEqual(str(self.card.give_hint()), "Paine lasketaan kaavalla p=F/A")
+        self.assertEqual(str(self.card.give_hint()),
+                         "Paine lasketaan kaavalla p=F/A")
 
     def test_give_hint_returns_correct_hint_when_category_is_2(self):
         self.card3.generate_variables()
-        self.assertEqual(str(self.card3.give_hint()), "Liike-energia lasketaan kaavalla E=1/2mv^2")
+        self.assertEqual(str(self.card3.give_hint()),
+                         "Liike-energia lasketaan kaavalla E=1/2mv^2")
 
     def test_seed_is_not_None_if_there_are_2_parameters_for_class_Card(self):
         self.assertNotEqual(self.card.seed, None)

@@ -67,7 +67,8 @@ class CreateUserView:
         if message:
             print(message)
             self._error_message = message
-            error_label = ttk.Label(master=self._frame, text=(self._error_message))
+            error_label = ttk.Label(
+                master=self._frame, text=(self._error_message))
             error_label.grid(row=4, column=1, padx=10, pady=10)
 
         self._root.grid_columnconfigure(1, weight=1, minsize=300)
@@ -94,9 +95,9 @@ class CreateUserView:
                         except Exception as e:
                             print("Error:", e)
                             self.destroy()
-                            self.create_user_frame("Virheellinen rekisteröityminen")
+                            self.create_user_frame(
+                                "Virheellinen rekisteröityminen")
                             self.pack()
-
 
         else:
             self.create_user_frame("Kaikki kentät on täytettävä")

@@ -2,7 +2,17 @@ import random
 
 
 class Card:
+    """Luokka, joka vastaa tehtäväkortteihin liittyvistä operaatioista. 
+    """
+
     def __init__(self, category, seed=None):
+        """Luokan konstruktori, joka alustaa tehtäväkortin muuttujat.
+
+        Args:
+            category: Käyttäjän valitsema tehtäväkategoria
+            seed: Parametri, jota käytetään luokan testaamiseen, 
+            kun generoidaan satunnaiset muuttujat tehtäväpohjaan. Defaults to None.
+        """
         self.category = category
         self.seed = seed
         self.force = None
@@ -13,6 +23,8 @@ class Card:
         self.kineticenergy = None
 
     def generate_variables(self):
+        """Generoi uudet muuttujat, joilla tehtävä tulee ratkaista.
+        """
         if self.seed is not None:
             random.seed(self.seed)
         if self.category == 1:
@@ -25,6 +37,12 @@ class Card:
             self.velocity = random.randint(5, 30)
 
     def solve(self):
+        """Ratkaisee annetun tehtävän generoiduilla muuttujilla.
+
+        Returns:
+            palauttaa tehtäväkategorian mukaisen vastauksen f-string muodossa.
+            Jos tehtäväkategoria ei ole mikään määritellyistä, palautetaann None.
+        """
         if self.category == 1:
             self.pressure = self.force/self.area
             return f"{self.pressure:.2f}"
@@ -34,6 +52,11 @@ class Card:
         return None
 
     def give_hint(self):
+        """Antaa käyttäjälle vihjeen tehtävän ratkaiemiseksi.
+
+        Returns:
+                Palauttaa merkkijonon, jossa kerrotaan kategorian mukainen vihje. 
+        """
         if self.category == 1:
             return "Paine lasketaan kaavalla p=F/A"
         if self.category == 2:
@@ -41,6 +64,10 @@ class Card:
         return None
 
     def show_solution(self):
+        """Näyttää käyttäjälle oikean vastauksen.
+        Returns:
+                Palauttaa merkkijonon, jossa on oikea ratkaisu kysyttyyn tehtävään.
+        """
         if self.category == 1:
             return f"""Paine lasketaan kaavalla p=F/A
               eli p={self.force}/{self.area} 
