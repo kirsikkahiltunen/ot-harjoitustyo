@@ -19,7 +19,8 @@ Sovellusta voi testata ajamalla komennon poetry run invoke start. Mikäli haluat
 
 1. Kloonaa tämä repositorio omalle koneellesi
 2. Asenna sovelluksen riippuvuudet terminaalissa ajamalla komento "poetry install"
-3. Käynnistä sovellus ajamalla komento "poetry run invoke start". Mikäli haluat, voit käynnistää sovelluksen graafisen käyttöliittymän komennolla "poetry run invoke start-GUI".
+3. Alusta tietokanta ajamalla komento "poetry run invoke initialize-db"
+3. Käynnistä sovellus ajamalla komento "poetry run invoke start". Sovelluksen graafisen käyttöliittymän voi käynnistää komennolla "poetry run invoke start-GUI" (Huom! vain rekisteröityminen ja kirjautuminen toimii).
 
 ### Sovelluksen testaaminen 
 
