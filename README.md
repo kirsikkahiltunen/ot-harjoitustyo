@@ -3,7 +3,7 @@
 
 **Tähän repositorioon** toteutetaan kurssin *harjoitustyö*. Harjoitustyön aiheena on **tehtävägeneraattorisovellus**, jonka avulla käyttäjä pystyy harjoittelemaan fysiikan ja kemian laskutehtäviä.
 
-Sovelluksen [release](https://github.com/kirsikkahiltunen/ot-harjoitustyo/releases/tag/viikko5)
+Sovelluksen [release](https://github.com/kirsikkahiltunen/ot-harjoitustyo/releases/tag/Viikko6)
 
 Sovellusta voi testata ajamalla komennon poetry run invoke start. Mikäli haluat, voit myös tutustua sovelluksen graafiseen käyttöliittymään ajamalla komennon poetry run invoke start-GUI. Graafinen käyttöliittymä on vielä hyvin keskeneräinen, mutta kirjautumista voi kokeilla kirjoittamalla käyttäjätunnukseksi ja salasanaksi "Testi". 
 
@@ -14,6 +14,7 @@ Sovellusta voi testata ajamalla komennon poetry run invoke start. Mikäli haluat
 - [työaikakirjanpito](https://github.com/kirsikkahiltunen/ot-harjoitustyo/blob/master/dokumentaatio/tyoaikakirjanpito.md)
 - [changelog](https://github.com/kirsikkahiltunen/ot-harjoitustyo/blob/master/dokumentaatio/changelog.md)
 - [arkkitehtuuri](https://github.com/kirsikkahiltunen/ot-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
+- [käyttöohje](https://github.com/kirsikkahiltunen/ot-harjoitustyo/blob/master/dokumentaatio/kayttoohje.md)
 
 ### Asennusohjeet
 
