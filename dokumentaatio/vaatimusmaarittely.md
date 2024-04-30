@@ -10,8 +10,8 @@ Sovelluksessa käyttäjäroolina aluksi vain normaali käyttäjä. Jos aikaa jä
 
 ## Suunnitellut toiminnallisuudet
 
-- Käyttäjä voi luoda sovellukseen käyttäjätunnuksen ja salasanan sekä kirjautua sisään sovellukseen. (lähes valmis)
-- Käyttäjä näkee listauksen fysiikan ja kemian aihealueista, joiden tehtäviä käyttäjä voi harjoitella.
+- Käyttäjä voi luoda sovellukseen käyttäjätunnuksen ja salasanan sekä kirjautua sisään sovellukseen. (tehty)
+- Käyttäjä näkee listauksen fysiikan ja kemian aihealueista, joiden tehtäviä käyttäjä voi harjoitella. (tehty)
 - Käyttäjä voi valita, minkä aihealueen tehtäviä hän haluaa harjoitella.(tehty)
 - Käyttäjä näkee kertaustehtävien määrän ja kertaustehtävien sisältämien tehtäväpohjien aihealueet.
 - Sovellus arpoo tehtävään tietyltä väliltä arvot, joita käyttäen tehtävä kuuluu ratkaista. (tehty)

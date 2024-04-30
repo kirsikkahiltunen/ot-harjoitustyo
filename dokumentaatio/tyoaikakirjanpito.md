@@ -14,4 +14,8 @@
 |  20.4.| 2    | Sovelluksen tietojentallennuksen opiskelua ja harjoittelua                   |
 |  21.4.| 2    | Tietokannan suunnittelua ja referenssisovelluksen tietokannan hallintaan tutustumista|
 |  23.4.| 8    | Sovelluksen lähdekoodin muokkaamista, sekvenssikaavion teko, uusien testien luominen ja sovelluksen rakenteen mukkaaminen SQL tietokantaa varten|
-|  yht. | 46  | |
+|  26.4.| 4    | SQLite tietokannan käyttöönotto|
+|  27.4.| 3    | uuden käyttäjän rekisteröimisen korjaus ja sovellus muokattu tallentamaan käyttäjätunnus ja salasana tietokantaan|
+|  29.4.| 4    | Sisäänkirjautumisen muokkaaminen toimivaksi ja uuden ominaisuuden lisääminen graafiseen käyttöliittymään|
+|  30.4.| 6    | Sisäänkirjautumisen ja rekisteröitymisen lisääminen tekstipohjaiseen käyttöliittymään, uusien testien luominen|
+|  yht. | 63  | |

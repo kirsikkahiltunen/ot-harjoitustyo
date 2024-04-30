@@ -27,3 +27,15 @@
 - Sovelluksen rakennetta muokattu tulevaa SQL tietokantaa varten, vielä tietokanta ei toimi.
 - Tehty sekvenssikaavio, joka kuvaa Card-luokan toimintaa, kun käytetään TerminalUI:tä
 - Lisätty testejä Card luokalle
+
+### Viikko 6
+
+- SQLite tietokanta otettu käyttöön
+- Ohjelmaan lisätty kirjautuminen ja rekisteröityminen TerminalUI luokkaan.
+- UserRepository luokkaan lisätty tietokantaoperaatioita.
+- CardRepository luokkaan lisätty tietokantaoperaatioita.
+- LoginView luokkaa muokattu niin, että kirjautuminen toimii tietokannasta löytyvillä tunnuksilla.
+- CreateUserView luokkaa muokattu niin, että uudet tunnukset tallennetaan tietokantaan.
+- ExerciseList luokkaa muokattu niin, että näkymässä listataan allekain exercises tietokannasta löytyvien tehtävien tehtäväkategoriat.
+- Luotu uusia testejä TestUserRepo luokkaan.
+- Lisätty uusi tehtävä "initialize_db" task.py tiedostoon.
