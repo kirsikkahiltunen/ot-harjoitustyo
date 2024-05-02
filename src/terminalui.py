@@ -4,12 +4,11 @@ from repositories.user_repository import UserRepository
 
 class TerminalUI:
     """Luokka, jonka avulla käytetään sovelluksen tekstipohjaista käyttöliittymää
-    """
-
+    """    
     def __init__(self):
         """Luokan konstruktori, joka kutsuu luokkaa UserRepository ja
           tallentaa sen muuttujaan sekä alustaa luokan muut muuttujat.
-        """
+        """        
         self.category_int = None
         self.card = None
         self.answer = None
@@ -22,7 +21,7 @@ class TerminalUI:
     def start_app(self):
         """Aloittaa sovelluksen suorittamisen ja näyttää aloitus valikon. 
         Vie käyttäjän kirjautumis tai rekisteröitymis näkymään tehdyn valinnan mukaan.
-        """
+        """        
         print("Hei! Tervetuloa käyttämään fysiikankertaus sovellusta")
         print("Valitse mitä haluat tehdä")
         print("1 kirjaudu sisään")
@@ -39,7 +38,7 @@ class TerminalUI:
 
     def login(self):
         """Kirjautumisnäkymä. Mikäli salasana ja käyttäjätunnus ovat oikein kutsutaan päävalikkonäkymää.
-        """
+        """        
         username = input("Anna käyttäjätunnus: ")
         password = input("Anna salasana: ")
         if self.user_repo.login(username, password):
@@ -52,7 +51,7 @@ class TerminalUI:
            Mikäli käyttäjätunnusta ei ole vielä varattu, kättäjätunnus ja salasana tallennetaan "users" tietokantaan ja 
            käyttäjä viedään päävalikko näkymään.
            Jos käyttäjätunnus on jo käytössä, tulostetaan virheilmoitus ja kutsutaan uudestaan tätä samaa rekisteröitymisnäkymää.
-        """
+        """        
         username = input("Anna käyttäjätunnus: ")
         password = input("Anna salasana: ")
         if len(username) > 0:
@@ -69,7 +68,7 @@ class TerminalUI:
 
     def select(self):
         """Päävalikko näkymä, jossa käyttäjä valitsee minkä aihealueen tehtäviä hän haluaa opiskella tai lopettaa sovelluksen suorittamisen.
-        """
+        """        
         print("Valitse, minkä aihealueen tehtäviä haluat harjoitella:\npaine=1\nliike-energia=2")
         print("0 lopettaa")
         category = input("Anna harjoiteltavan kategorian numero:")
@@ -81,7 +80,7 @@ class TerminalUI:
 
     def print_question(self):
         """Kutsuu Card luokan funktiota, joka generoi tehtävän muuttujat ja tulostaa tämän jälkeen kysymyksen.
-        """
+        """        
         if self.category_int == 1:
             self.card.generate_variables()
 
@@ -106,7 +105,7 @@ class TerminalUI:
 
     def get_answer_from_user(self):
         """Pyytää käyttäjältä tämän vastauksen.
-        """
+        """        
         self.answer = input(
             "Anna tähän tehtävän vastaus kahden desimaalin tarkkuudella: ")
         self.calculate_correct_answer()
@@ -115,7 +114,7 @@ class TerminalUI:
         """Kysyy tarvitseeko käyttäjä vihjeen.
            Mikäli käyttäjä valitsee haluavansa vihjeen, tulostetaan tehtävän ratkaisua helpottava vihje.
            Käyttäjä saa kokeilla vastata tehtävään uudestaan.
-        """
+        """        
         self.help = input(
             "Oletko umpikujassa? Mikäli haluat vihjeen tehtävän ratkaisuun valitse 'Y', muussa tapauksessa valitse 'N', '0' lopettaa: ")
         if self.help == "Y":
@@ -128,6 +127,8 @@ class TerminalUI:
             self.end_session()
 
     def calculate_correct_answer(self):
+        """Tarkistaa käyttäjän antaman vastauksen ja kertoo onko vastaus oikein vai väärin
+        """
         correct_answer = self.card.solve()
         if self.answer == correct_answer:
             print("Hienoa, vastaus on oikein!")
@@ -143,8 +144,11 @@ class TerminalUI:
             self.ask_for_help()
 
     def end_session(self):
+        """Lopettaa ohjelman suorittamisen ja kertoo käyttäjälle kuinka monta prosenttia tehtävistä meni oikein,
+          mikäli käyttäjä on vastannut vähintään yhteen tehtävään.
+        """
         print("Kiitos sovelluksen käytöstä!")
-        if self.correct_count > 0 and self.cardcount > 0:
+        if self.cardcount > 0:
             percent = (self.correct_count/self.cardcount)*100
             print(
                 f"Vastasit yhteensä {self.cardcount} tehtävään, joista {self.correct_count} eli {percent:.2f}% sait ensimmäisellä yrityksellä oikein.")
