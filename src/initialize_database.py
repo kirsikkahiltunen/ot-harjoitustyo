@@ -15,6 +15,13 @@ def drop_tables():
     cursor.execute('''
         DROP TABLE if EXISTS exercises;
     ''')
+    cursor.execute('''
+        DROP TABLE if EXISTS rewiev_exercises;
+    ''')
+
+    cursor.execute('''
+        DROP TABLE if EXISTS card_categories;
+    ''')
 
     connection.commit()
 
@@ -26,7 +33,7 @@ def create_tables():
 
     cursor.execute('''
         CREATE TABLE users (
-            id serial primary key,
+            id integer primary key,
             username text,
             password text
         );
@@ -34,10 +41,26 @@ def create_tables():
 
     cursor.execute('''
         CREATE TABLE exercises (
-            id serial primary key,
+            id integer primary key,
             category int,
             variables text,
             question text
+        );
+    ''')
+
+    cursor.execute('''
+        CREATE TABLE rewiev_exercises (
+            id integer primary key,
+            category int,
+            variables text,
+            question text
+        );
+    ''')
+
+    cursor.execute('''
+        CREATE TABLE card_categories (
+            category int,
+            category_text text
         );
     ''')
 
@@ -49,21 +72,31 @@ def add_cards_to_exercises():
     """
     cursor = connection.cursor()
     cursor.execute("INSERT INTO exercises (category, variables, question) values (?, ?, ?)",
-                   (1, '"force":(350, 750); "area":(0.01, 0.022)',
+                   (1, 'variable1:0.01, 0.022; variable2:350, 750',
                     '''Emma seisoo yhdellä jalalla,
-                       hänen kengän pintaala on {area} neliömetriä
-                         ja hänen kengän alueelle kohdistuva voima on {force} newtonia,
+                       hänen kengän pintaala on {variable1} neliömetriä
+                         ja hänen kengän alueelle kohdistuva voima on {variable2} newtonia,
                            laske kuinka suuren paineen Emma aiheuttaa maahan.'''))
 
     cursor.execute("INSERT INTO exercises (category, variables, question) values (?, ?, ?)",
-                   (2, '"mass":(300, 10000); "velocity":(5, 30)',
+                   (2, 'variable1:5, 30; variable2:300, 10000',
                     '''Laske ajoneuvon liike-energia
-                       kun sen nopeus on {velocity} metriä 
-                       sekunnissa ja massa {mass} kilogrammaa'''))
+                       kun sen nopeus on {variable1} metriä 
+                       sekunnissa ja massa {variable2} kilogrammaa'''))
 
     connection.commit()
 
+def add_categories_to_card_categories():
+    cursor = connection.cursor()
+    cursor.execute("INSERT INTO card_categories (category, category_text) values (?, ?)",
+                   (1, 'Paine'))
+    
+    cursor.execute("INSERT INTO card_categories (category, category_text) values (?, ?)",
+                   (2, 'Liike-energia'))
+    
+    connection.commit()
 
 drop_tables()
 create_tables()
 add_cards_to_exercises()
+add_categories_to_card_categories()
