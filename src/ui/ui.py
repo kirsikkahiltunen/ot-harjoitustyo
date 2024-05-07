@@ -1,7 +1,7 @@
 from ui.login_view import LoginView
 from ui.exercise_list_view import ExerciseList
 from ui.create_user_view import CreateUserView
-
+from ui.exercise_view import Exercise
 
 class UI:
     """Sovelluksen graafisesta käyttöliittymästä vastaava luokka
@@ -58,5 +58,15 @@ class UI:
 
         self._current_view = ExerciseList(
             self._root,
+            self._show_exercise_view
+        )
+        self._current_view.pack()
+
+    def _show_exercise_view(self, id):
+        self._hide_current_view()
+
+        self._current_view = Exercise(
+            self._root,
+            id
         )
         self._current_view.pack()
