@@ -5,7 +5,7 @@ class Card:
     """Luokka, joka vastaa tehtäväkortteihin liittyvistä operaatioista. 
     """
 
-    def __init__(self, category, seed=None):
+    def __init__(self, seed=None):
         """Luokan konstruktori, joka alustaa tehtäväkortin muuttujat.
 
         Args:
@@ -13,7 +13,6 @@ class Card:
             seed: Parametri, jota käytetään luokan testaamiseen, 
             kun generoidaan satunnaiset muuttujat tehtäväpohjaan. Defaults to None.
         """
-        self.category = category
         self.seed = seed
         self.force = None
         self.area = None
@@ -22,19 +21,16 @@ class Card:
         self.pressure = None
         self.kineticenergy = None
 
-    def generate_variables(self):
+    def generate_variables(self, variables):
         """Generoi uudet muuttujat, joilla tehtävä tulee ratkaista.
         """
         if self.seed is not None:
             random.seed(self.seed)
-        if self.category == 1:
-            self.force = random.randint(350, 750)  # force in newtons
-            self.area = round(random.uniform(0.01, 0.022),
-                              3)  # area in square meters
-        if self.category == 2:
-            self.mass = random.randint(300, 10000)  # mass in kilograms
-            # velocity in meters per second
-            self.velocity = random.randint(5, 30)
+        generated_variables={}
+        for variable, info in variables.items():
+            generated_var=round(random.uniform(info["min"],info["max"]), 3)
+            generated_variables[variable]=generated_var
+        return generated_variables
 
     def solve(self):
         """Ratkaisee annetun tehtävän generoiduilla muuttujilla.
