@@ -18,4 +18,10 @@
 |  27.4.| 3    | uuden käyttäjän rekisteröimisen korjaus ja sovellus muokattu tallentamaan käyttäjätunnus ja salasana tietokantaan|
 |  29.4.| 4    | Sisäänkirjautumisen muokkaaminen toimivaksi ja uuden ominaisuuden lisääminen graafiseen käyttöliittymään|
 |  30.4.| 6    | Sisäänkirjautumisen ja rekisteröitymisen lisääminen tekstipohjaiseen käyttöliittymään, uusien testien luominen|
-|  yht. | 63  | |
+|  03.5.| 3   | Tehtäväkategorioiden listaus näkymän luominen tehtävävalikkoon|
+|  06.5.| 6   | Card luokan muokkaaminen toimimaan SQL tietokannan kanssa paremmin ja tietokantataulujen muokkaaminen|
+|  07.5.| 8  | Tehtävänvalinta nappien lisääminen, tehtävänannon muotoilu ja tehtävänäkymän luominen|
+|  08.5.| 7   | Vastaus kentän lisääminen tehtävään ja tehtävän automaattitarkistuksen toteutus|
+|  09.5.| 5   | Tehtävän automaattitarkistuksen muokkaus, ilmoitusviestien lisääminen ja uusien testitapausten luominen|
+|  10.5.| 8   | Loppujen testien toteutus, dokumentaation kirjoittaminen, koodin tyylin tarkastaminen ja loppuviimeistelyt|
+|  yht. | 100  | |

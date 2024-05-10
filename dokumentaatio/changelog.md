@@ -39,3 +39,13 @@
 - ExerciseList luokkaa muokattu niin, että näkymässä listataan allekain exercises tietokannasta löytyvien tehtävien tehtäväkategoriat.
 - Luotu uusia testejä TestUserRepo luokkaan.
 - Lisätty uusi tehtävä "initialize_db" task.py tiedostoon.
+
+### Viikko 7 ja loppupalautus
+
+- Muokattu luokkaa Card toimimaan paremmin tietokannan kanssa.
+- Lisätty tehtäaiheiden listaus graafiseen käyttöliittymään.
+- Muokattu tietokantatulujen rakennetta ja lisätty uusia tietokantatauluja tehtävien käsittelyyn.
+- Luotu uusi luokka InitializeDatabase helpottamaan ja selkeyttämään tietokannan alustamista
+- Lisätty tehtäväien kysymyksenasetteluun, automaattiseen tarkistamiseen ja muuttujien luontiin sekä tellentamiseen liittyviä funktioita CardRepository luokkaan.
+- Lisätty ulos kirjautumisen käsittely UserRepository luokkaan. 
+- Poistettu terminalUI, ohjelman lopullisessa versiossa käytössä vain graafinen käyttöliittymä.
