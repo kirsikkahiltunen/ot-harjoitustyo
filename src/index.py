@@ -6,7 +6,7 @@ def main():
 
     window = Tk()
     window.title("Fysiikankertaus sovellus")
-    window.geometry("550x350")
+    window.geometry("850x450")
 
     ui = UI(window)
     ui.start()
