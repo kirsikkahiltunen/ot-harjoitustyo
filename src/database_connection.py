@@ -1,10 +1,14 @@
 import sqlite3
-import os
+from config import DATABASE_FILE_PATH
 
-connection = sqlite3.connect(os.path.join(
-    os.path.dirname(__file__), "..", "data", "database.sqlite"))
+connection = sqlite3.connect(DATABASE_FILE_PATH)
 connection.row_factory = sqlite3.Row
 
 
 def get_database_connection():
+    """Hakee tietokannalle polun ja luo tietokantayhteyden
+
+    Returns:
+        Palauttaa tietokantayhteyden
+    """
     return connection
