@@ -4,7 +4,15 @@ from repositories.user_repository import UserRepository
 
 
 class CreateUserView:
+    """Luokka, joka vastaa uuden käyttäjän rekisteröinti näkymästä.
+    """
     def __init__(self, root, _show_login):
+        """Luokan konstruktori, joka kutsuu UserRepository:a ja luo rekisteröitymisnäkymän.
+
+        Args:
+            root: Tkinter:in juuri
+            _show_login: arvo, jota kutsutaan, kun siirrytään kirjautumis näkymään.
+        """
 
         self._root = root
         self._frame = None
@@ -19,12 +27,21 @@ class CreateUserView:
         self.create_user_frame()
 
     def pack(self):
+        """Näyttää create_user_frame()-funktion määrittämän näkymän.
+        """
         self._frame.pack(fill=constants.X)
 
     def destroy(self):
         self._frame.destroy()
+        """Tuhoaa viimeisimmän näkymän.
+        """
 
     def create_user_frame(self, message=None):
+        """Määrittää rekisteröitymisnäkymän komponentit ja asettelun.
+
+        Args:
+            message: Käyttäjälle näytettävä viesti. Defaults to None.
+        """
         self._frame = ttk.Frame(master=self._root)
 
         heading_label = ttk.Label(
@@ -74,6 +91,9 @@ class CreateUserView:
         self._root.grid_columnconfigure(1, weight=1, minsize=300)
 
     def _create_user_handler(self):
+        """Käsittelee uuden käyttäjän luonnin.
+        Näyttää viestin, mikäli rekisteröitymisessä tapahtuu virhe.
+        """
         username = self._username_entry.get()
         password = self._password_entry.get()
         password_again = self._password_again_entry.get()
