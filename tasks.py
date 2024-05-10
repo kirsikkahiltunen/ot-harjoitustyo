@@ -2,10 +2,6 @@ from invoke import task
 
 @task
 def start(ctx):
-    ctx.run("python3 src/terminalui.py", pty=True)
-
-@task
-def start_GUI(ctx):
     ctx.run("python3 src/index.py", pty=True)
 
 @task
@@ -27,4 +23,5 @@ def lint(ctx):
 
 @task
 def initialize_db(ctx):
-    ctx.run("python3 src/initialize_database.py", pty=True)
+    ctx.run("python3 src/database_setup.py", pty=True)
+    
