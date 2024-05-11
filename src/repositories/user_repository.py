@@ -9,6 +9,7 @@ class UserRepository:
         """Luokan konstruktori, joka luo luokalle tietokantayhteyden.
         """
         self._connection = get_database_connection()
+        self.user = None
 
     def find_user_by_username(self, username):
         """Etsii käyttäjän users -taulusta.
@@ -70,15 +71,21 @@ class UserRepository:
             False: jos käyttäjänimi tai salasana virheellinen.
         """
         user_row = self.find_user_by_username(user)
+        self.user = user
 
         if user_row is None or password != user_row[1]:
-            print("Käyttäjätunnus tai salasana väärin")
             return False
 
         return True
 
+    def logout(self):
+        """Kirjaa käyttäjän ulos sovelluksesta.
+        """
+        self.user = None
+
     def delete_all_users(self):
-        """Poistaa kaikki käyttäjät tietokannasta."""
+        """Poistaa kaikki käyttäjät tietokannasta.
+        """
         cursor = self._connection.cursor()
         cursor.execute("DELETE FROM users")
         self._connection.commit()
