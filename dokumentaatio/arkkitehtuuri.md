@@ -101,6 +101,8 @@ sequenceDiagram
 ``` 
 ### Tehtävään vastaaminen
 
+Jos tehtävän vastaus on oikein:
+
 ```mermaid
 sequenceDiagram
   actor User
@@ -108,12 +110,14 @@ sequenceDiagram
   participant CardRepository
   participant Card
   User->>UI: click "Tarkista" button
+  UI->>UI: _check_is_numeric()
   UI->>CardRepository : solve_exercise(exercise_id, 25)
   CardRepository->>CardRepository: find_operation(exercise_id)
   CardRepository->>Card: solve(operation, variables)
   Card-->>CardRepository: correct
   CardRepository-->>UI: True
 ``` 
+Jos tehtävän vastaus on väärin:
 
 ```mermaid
 sequenceDiagram
@@ -123,6 +127,7 @@ sequenceDiagram
   participant UserRepository
   participant Card
   User->>UI: click "Tarkista" button
+  UI->>UI: _check_is_numeric()
   UI->>CardRepository : solve_exercise(exercise_id, 15)
   CardRepository->>CardRepository: find_operation(exercise_id)
   CardRepository->>Card: solve(operation, variables)
