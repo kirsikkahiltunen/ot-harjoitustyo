@@ -18,6 +18,7 @@ class Exercise:
         self._frame = None
         self._exercise_id = id
         self.question = None
+        self.incorrect_format = None
         self._show_exercise_list_view = _show_exercise_list_view
 
         self.card_repo = CardRepository()
@@ -89,18 +90,42 @@ class Exercise:
         Mikäli vastaus on väärin, lisätään se review_exercises tauluun. 
         """
         answer = self._answer_entry.get()
-        is_correct = self.card_repo.solve_exercise(self._exercise_id, answer)
-        if is_correct == True:
-            self.destroy()
-            message = "Hienoa, vastauksesi on oikein"
-            self.exercise_frame(message)
-            self.pack()
+        numeric_answer=self._check_is_numeric()
+        if numeric_answer:
+            is_correct = self.card_repo.solve_exercise(self._exercise_id, answer)
+            if is_correct == True:
+                self.destroy()
+                message = "Hienoa, vastauksesi on oikein"
+                self.exercise_frame(message)
+                self.pack()
+            else:
+                self.destroy()
+                self.card_repo.save_to_review_exercises(self._exercise_id)
+                message = "Vastaus on väärin, tehtävä tallennettu kertaustehtäviin"
+                self.exercise_frame(message)
+                self.pack()
+    
+    def _check_is_numeric(self):
+        """Tarkistaa, että käyttäjän antaa vastauksen numeroina.
+        Antaa käyttäjälle ilmoituksen, jos vastaus ei ole numeerinen.
+
+        Returns:
+            True: vastaus on numeerinen.
+            False: vastaus ei ole numeerinen.
+        """
+        answer = self._answer_entry.get()
+        if answer.isdigit():
+            return True
         else:
             self.destroy()
-            self.card_repo.save_to_review_exercises(self._exercise_id)
-            message = "Vastaus on väärin, tehtävä tallennettu kertaustehtäviin"
-            self.exercise_frame(message)
+            incorrect_format = "Vastaus tulee antaa numeroina kahden desimaalin tarkkuudella"
+            self.exercise_frame()
             self.pack()
+            format_label = ttk.Label(master=self._frame,
+                                      text=incorrect_format, font=("Arial", 12), foreground="red")
+            format_label.grid(row=8, column=1, columnspan=2,
+                               sticky=constants.W, padx=5, pady=5)
+            return False
 
     def show_exercise_list_view(self):
         """Vie käyttäjän takaisin tehtävälista näkymään.
