@@ -12,6 +12,7 @@ Sovelluksen loppupalautuksen [release](https://github.com/kirsikkahiltunen/ot-ha
 - [changelog](https://github.com/kirsikkahiltunen/ot-harjoitustyo/blob/master/dokumentaatio/changelog.md)
 - [arkkitehtuuri](https://github.com/kirsikkahiltunen/ot-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
 - [käyttöohje](https://github.com/kirsikkahiltunen/ot-harjoitustyo/blob/master/dokumentaatio/kayttoohje.md)
+- [testausdokumentti](https://github.com/kirsikkahiltunen/ot-harjoitustyo/blob/master/dokumentaatio/Testidokumentti.md)S
 
 ### Asennusohjeet
 
