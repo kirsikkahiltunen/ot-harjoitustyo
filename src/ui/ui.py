@@ -3,15 +3,17 @@ from ui.exercise_list_view import ExerciseList
 from ui.create_user_view import CreateUserView
 from ui.exercise_view import Exercise
 
+
 class UI:
     """Sovelluksen graafisesta käyttöliittymästä vastaava luokka
     """
 
     def __init__(self, root):
-        """Luokan konstruktori.Luo alustaa uuden luokan ja juuren.
+        """Luokan konstruktori.Luo uuden juuren.
 
         Args:
             root: Tkinter:in juuri.
+            self._current_view: määrittää nykyisen näkymän.
         """
         self._root = root
         self._current_view = None
@@ -41,7 +43,7 @@ class UI:
         self._current_view.pack()
 
     def _show_create_user(self):
-        """Näyttää käyttäjälle, jossaa käyttäjä voi luoda uuden käyttäjätunnuksen ja salasanan.
+        """Näyttää käyttäjälle näkymän, jossa käyttäjä voi luoda uuden käyttäjätunnuksen ja salasanan.
         """
         self._hide_current_view()
 
@@ -58,15 +60,22 @@ class UI:
 
         self._current_view = ExerciseList(
             self._root,
-            self._show_exercise_view
+            self._show_exercise_view,
+            self._show_login
         )
         self._current_view.pack()
 
     def _show_exercise_view(self, id):
+        """Näyttää käyttäjälle, tämän valitseman tehtävän.
+
+        Args:
+            id (int): näytettävän tehtävän id
+        """
         self._hide_current_view()
 
         self._current_view = Exercise(
             self._root,
-            id
+            id,
+            self._show_exercise_list_view
         )
         self._current_view.pack()
