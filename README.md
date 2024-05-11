@@ -3,7 +3,7 @@
 
 **Tähän repositorioon** on toteutettu kurssin *Aineopintojen harjoitustyö: ohjelmistotekniikka, kevät 2024* harjoitustyö. Harjoitustyön aiheena on **tehtävägeneraattorisovellus**, jonka avulla käyttäjä pystyy harjoittelemaan fysiikan ja kemian laskutehtäviä.
 
-Sovelluksen loppupalautuksen [release](https://github.com/kirsikkahiltunen/ot-harjoitustyo/releases/tag/Loppupalautus)
+Sovelluksen loppupalautuksen [release](https://github.com/kirsikkahiltunen/ot-harjoitustyo/releases/tag/loppupalautus)
 
 ### Dokumentaatio
 
