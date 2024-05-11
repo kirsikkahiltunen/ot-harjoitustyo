@@ -24,4 +24,5 @@
 |  08.5.| 7   | Vastaus kentän lisääminen tehtävään ja tehtävän automaattitarkistuksen toteutus|
 |  09.5.| 5   | Tehtävän automaattitarkistuksen muokkaus, ilmoitusviestien lisääminen ja uusien testitapausten luominen|
 |  10.5.| 8   | Loppujen testien toteutus, dokumentaation kirjoittaminen, koodin tyylin tarkastaminen ja loppuviimeistelyt|
-|  yht. | 100  | |
+|  11.5.| 3   | Arkkitehtuurikuvauksen viimeistely, käyttäjän syötteen tarkistuksen lisäys ja muutama tyyliin liittyvä muokkaus|
+|  yht. | 103  | |
