@@ -1,12 +1,9 @@
-# Ohjelmistotekniikka, harjoitustyö
+# Fysiikan kertaus sovellus
 
 
-**Tähän repositorioon** toteutetaan kurssin *harjoitustyö*. Harjoitustyön aiheena on **tehtävägeneraattorisovellus**, jonka avulla käyttäjä pystyy harjoittelemaan fysiikan ja kemian laskutehtäviä.
+**Tähän repositorioon** on toteutettu kurssin *Aineopintojen harjoitustyö: ohjelmistotekniikka, kevät 2024* harjoitustyö. Harjoitustyön aiheena on **tehtävägeneraattorisovellus**, jonka avulla käyttäjä pystyy harjoittelemaan fysiikan ja kemian laskutehtäviä.
 
-Sovelluksen [release](https://github.com/kirsikkahiltunen/ot-harjoitustyo/releases/tag/Viikko6)
-
-Sovellusta voi testata ajamalla komennon poetry run invoke start. Mikäli haluat, voit myös tutustua sovelluksen graafiseen käyttöliittymään ajamalla komennon poetry run invoke start-GUI. Graafinen käyttöliittymä on vielä hyvin keskeneräinen, mutta kirjautumista voi kokeilla kirjoittamalla käyttäjätunnukseksi ja salasanaksi "Testi". 
-
+Sovelluksen loppupalautuksen [release](https://github.com/kirsikkahiltunen/ot-harjoitustyo/releases/tag/Viikko6)
 
 ### Dokumentaatio
 
@@ -21,7 +18,7 @@ Sovellusta voi testata ajamalla komennon poetry run invoke start. Mikäli haluat
 1. Kloonaa tämä repositorio omalle koneellesi
 2. Asenna sovelluksen riippuvuudet terminaalissa ajamalla komento "poetry install"
 3. Alusta tietokanta ajamalla komento "poetry run invoke initialize-db"
-4. Käynnistä sovellus ajamalla komento "poetry run invoke start". Sovelluksen graafisen käyttöliittymän voi käynnistää komennolla "poetry run invoke start-GUI" (Huom! vain rekisteröityminen ja kirjautuminen toimii).
+4. Käynnistä sovellus ajamalla komento "poetry run invoke start".
 
 ### Sovelluksen testaaminen 
 
