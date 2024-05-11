@@ -1,7 +1,7 @@
 from tkinter import Tk, ttk, constants
 from repositories.card_repository import CardRepository
 from cards import Card
-
+import re
 
 class Exercise:
     """Luokka, joka vastaa tehtävä näkymästä.
@@ -113,7 +113,10 @@ class Exercise:
             False: vastaus ei ole numeerinen.
         """
         answer = self._answer_entry.get()
-        if answer.isdigit():
+        #ChatGPT:llä generoitu koodi alkaa
+        answer_format = r'^\d*\.?\d*$' # Tämä rivi generoitu ChatGPT:llä
+        #ChatGPT:llä generoitu koodi loppuu
+        if re.match(answer_format, answer):
             return True
         else:
             self.destroy()
