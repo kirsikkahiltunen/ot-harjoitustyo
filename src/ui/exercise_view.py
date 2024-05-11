@@ -18,7 +18,6 @@ class Exercise:
         self._frame = None
         self._exercise_id = id
         self.question = None
-        self.incorrect_format = None
         self._show_exercise_list_view = _show_exercise_list_view
 
         self.card_repo = CardRepository()
