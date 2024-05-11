@@ -103,7 +103,6 @@ class CreateUserView:
                 if len(password_again) > 0:
                     if password == password_again:
                         try:
-                            print("hep")
                             if self.user_repo.create_user(username, password):
                                 self._show_login()
                             else:
